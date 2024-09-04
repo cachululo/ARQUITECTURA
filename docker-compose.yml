@@ -1,0 +1,13 @@
+version: '1'
+services:
+  microservicio:
+    build: #codigo compilado
+      context: . #. significa leer donde estamos parados
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - spring.datasource.url=dbc:oracle:thin:@hvct7uuw3v1633bj_tp?TNS_ADMIN=/app/oracle_wallet/
+      - spring.datasource.username=java_ms
+      - spring.datasource.password=Py4fe0mg.1812
+    restart: always
